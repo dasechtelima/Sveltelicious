@@ -1,0 +1,120 @@
+[
+  {
+    "Name": "Kürbiscremesuppe",
+    "Beschreibung": "ganz einfache Kürbiscremesuppe (ohne Orangen etc., nichts ausgefallenes)",
+    "Zutaten": [
+      [
+        "1000g",
+        "Kürbis"
+      ],
+      [
+        "4",
+        "Kartoffeln"
+      ],
+      [
+        "2 Stangen",
+        "Lauch"
+      ],
+      [
+        "60g",
+        "Butter"
+      ],
+      [
+        "2L",
+        "Wasser"
+      ],
+      [
+        "2",
+        "Gemüsebrühwürfel"
+      ],
+      [
+        "",
+        "Salz & Pfeffer"
+      ]
+    ],
+    "Zubereitung": "Das Kürbisfleisch würfeln, die Kartoffeln schälen und auch würfeln. Den Lauch waschen und in Streifen schneiden. Die Butter erhitzen und das  Gemüse darin anschwitzen. \u2028\u20282 Liter Wasser aufgießen mit dem Brühwürfel, Salz und Pfeffer würzen.  Bei mittlerer Hitze ca. 30 Minuten weich kochen. Nach Ende der Garzeit  alles pürieren. Mit Kräutern garnieren.",
+    "Kategorie": "Mittag- & Abendessen",
+    "Dauer": "30min",
+    "Schwierigkeit": "2",
+    "Bild": "..."
+  },
+  {
+    "Name": "Pancakes",
+    "Beschreibung": "Wir zeigen dir, wie du ganz einfach super fluffige American Pancakes zaubern kannst.",
+    "Zutaten": [
+      [
+        "500g",
+        "Weizenmehl"
+      ],
+      [
+        "5-6 EL",
+        "Zucker"
+      ],
+      [
+        "4 TL",
+        "Backpulver"
+      ],
+      [
+        "2 Prisen",
+        "Salz"
+      ],
+      [
+        "4",
+        "Eier"
+      ],
+      [
+        "400ml",
+        "Milch"
+      ],
+      [
+        "",
+        "Ahornsirup"
+      ],
+      [
+        "",
+        "Beeren"
+      ]
+    ],
+    "Zubereitung": "Mehl, Zucker, Backpulver und Salz in einer Schüssel vermischen. Eier und Milch hinzufügen und alles zu einem glatten Teig verrühren. Eine Pfanne erhitzen und etwas Butter darin schmelzen lassen. Den Teig portionsweise in die Pfanne geben und von beiden Seiten goldbraun backen. Mit Ahornsirup und Beeren servieren.",
+    "Kategorie": "Frühstück",
+    "Dauer": "10min",
+    "Schwierigkeit": "1"
+  },
+  {
+    "Name": "Spaghetti Carbonara",
+    "Zutaten": [
+      [
+        "250g",
+        "Spaghetti"
+      ],
+      [
+        "100g",
+        "Pancetta"
+      ],
+      [
+        "2",
+        "Eier"
+      ],
+      [
+        "40g",
+        "Parmesan"
+      ],
+      [
+        "40g",
+        "Pecorino Romano"
+      ],
+      [
+        "",
+        "Olivenöl"
+      ],
+      [
+        "",
+        "Salz & Pfeffer"
+      ]
+    ],
+    "Zubereitung": "Spaghetti in Salzwasser al dente kochen. Pancetta in einer Pfanne knusprig braten. Eier, Parmesan und Pecorino Romano in einer Schüssel verquirlen. Spaghetti abgießen und in die Pfanne geben. Eiermischung hinzufügen und alles gut vermengen. Mit Salz und Pfeffer abschmecken.",
+    "Kategorie": "Mittag- & Abendessen",
+    "Dauer": "20min",
+    "Schwierigkeit": "2"
+  }
+]
