@@ -1,12 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
+	import { fetchRecipes } from '$lib';
 	import Card from '$lib/components/Card.svelte';
 
 	let recipes = [];
 
 	onMount(async () => {
-		const response = await fetch('src/lib/data/rezepte.json');
-		recipes = await response.json();
+		recipes = await fetchRecipes();
 		console.log(recipes);
 	});
 
@@ -20,7 +20,7 @@
 </a>
 <div class="flex flex-row">
 	{#each recipes as recipe}
-		<Card>
+		<Card imgBase64={recipe.Bild}>
 			<p slot="Name" class="font-heading text-3xl font-black">{recipe.Name}</p>
 			<p slot="Dauer" class="font-extrabold">{recipe.Dauer}</p>
 			<p slot="Schwierigkeit">{getStars(recipe.Schwierigkeit)}</p>
