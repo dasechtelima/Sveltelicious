@@ -5,6 +5,7 @@
 
 	let recipes = [];
 	let allRecipes = [];
+	let activeCategory = '';
 
 	onMount(async () => {
 		recipes = await fetchRecipes();
@@ -19,10 +20,8 @@
 	// Searchbar
 	let search = '';
 	let timeout;
-	let searching = false;
 
 	function handle_search() {
-		searching = true;
 		if (timeout) clearTimeout(timeout);
 		timeout = setTimeout(get_recipes, 300);
 	}
@@ -35,14 +34,28 @@
 
 		const searchTerm = search.toLowerCase();
 		recipes = allRecipes.filter(recipe => recipe.Name.toLowerCase().includes(searchTerm));
-		searching = false;
 	}
 
 	function reset() {
 		recipes = allRecipes;
-		searching = false;
+		activeCategory = '';
 	}
+
+	//Category Filter
+
+	function filter_category(category) {
+		if (activeCategory === category) {
+			reset();
+			return;
+		}
+
+		activeCategory = category;
+		const searchTerm = category.toLowerCase();
+		recipes = allRecipes.filter(recipe => recipe.Kategorie.toLowerCase().includes(searchTerm));
+	}
+
 </script>
+
 <div class="flex justify-between items-center mx-8 mt-3">
 	<a href="/" class="font-heading text-black font-black text-6xl">
 		<span class="text-sv-red">Svelte</span>licious
@@ -54,8 +67,23 @@
 					 on:input={handle_search}>
 	</div>
 </div>
-<div class="flex place-content-center">
-	<p class="font-heading text-5xl m-2">What do you fancy today?</p></div>
+<div class="flex place-items-center flex-col mb-8">
+	<p class="font-heading text-5xl m-2">What do you fancy today?</p>
+	<div class="flex flex-row place-content-center font-semibold mt-3">
+		<button on:click={() => filter_category('Frühstück')} on:blur={reset}
+						class={`bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Frühstück' ? 'bg-sv-green' : ''}`}>
+			Frühstück
+		</button>
+		<button on:click={() => filter_category('Mittag')} on:blur={reset}
+						class={`mx-2 bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Mittag' ? 'bg-sv-green' : ''}`}>
+			Mittag
+		</button>
+		<button on:click={() => filter_category('Abend')} on:blur={reset}
+						class={`bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Abend' ? 'bg-sv-green' : ''}`}>
+			Abend
+		</button>
+	</div>
+</div>
 <div class="flex flex-row place-content-center">
 	{#each recipes as recipe}
 		<Card imgBase64={recipe.Bild}>
