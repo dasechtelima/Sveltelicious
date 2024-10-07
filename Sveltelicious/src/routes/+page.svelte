@@ -13,10 +13,6 @@
 		console.log(recipes);
 	});
 
-	function getStars(difficulty) {
-		return '⭐'.repeat(difficulty);
-	}
-
 	// Searchbar
 	let search = '';
 	let timeout;
@@ -87,18 +83,7 @@
 </div>
 <div class="flex flex-row place-content-center">
 	{#each recipes as recipe}
-		<Card imageSrc={recipe.Bild}>
-			<p slot="Name" class="font-heading text-2xl font-black">{recipe.Name}</p>
-			<p slot="Dauer" class="font-extrabold text-sm">{recipe.Dauer}</p>
-			<p slot="Schwierigkeit">{getStars(recipe.Schwierigkeit)}</p>
-			<p slot="Kategorie" class="font-extrabold text-sm">{recipe.Kategorie}</p>
-			<p slot="Beschreibung" class="font-semibold text-sm">{recipe.Beschreibung}</p>
-			<ul slot="Zutaten" class="font-semibold text-sm">
-				{#each recipe.Zutaten as zutat}
-					{zutat[0]} {zutat[1]},&nbsp;
-				{/each}
-			</ul>
-		</Card>
+		<Card singleRecipe={recipe}></Card>
 	{/each}
 </div>
 
