@@ -1,6 +1,6 @@
 <script>
-	export let imgBase64 = '';
-	let imgSrc = 'data:image/png;base64, ' + imgBase64;
+	export let imageSrc = "";
+	let imgSrc = "src/lib/data/img/" + imageSrc;
 </script>
 
 <div class="flex flex-col bg-sv-beige/60 w-96 h-[450px] p-2 mx-4 rounded-xl">

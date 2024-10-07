@@ -34,6 +34,7 @@
 
 		const searchTerm = search.toLowerCase();
 		recipes = allRecipes.filter(recipe => recipe.Name.toLowerCase().includes(searchTerm));
+		console.log(recipes);
 	}
 
 	function reset() {
@@ -71,22 +72,22 @@
 	<p class="font-heading text-5xl m-2">What do you fancy today?</p>
 	<div class="flex flex-row place-content-center font-semibold mt-3">
 		<button on:click={() => filter_category('Frühstück')} on:blur={reset}
-						class={`bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Frühstück' ? 'bg-sv-green' : ''}`}>
+						class={`bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Frühstück' ? 'bg-sv-green border-black' : ''}`}>
 			Frühstück
 		</button>
 		<button on:click={() => filter_category('Mittag')} on:blur={reset}
-						class={`mx-2 bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Mittag' ? 'bg-sv-green' : ''}`}>
+						class={`mx-2 bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Mittag' ? 'bg-sv-green border-black' : ''}`}>
 			Mittag
 		</button>
 		<button on:click={() => filter_category('Abend')} on:blur={reset}
-						class={`bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Abend' ? 'bg-sv-green' : ''}`}>
+						class={`bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Abend' ? 'bg-sv-green border-black' : ''}`}>
 			Abend
 		</button>
 	</div>
 </div>
 <div class="flex flex-row place-content-center">
 	{#each recipes as recipe}
-		<Card imgBase64={recipe.Bild}>
+		<Card imageSrc={recipe.Bild}>
 			<p slot="Name" class="font-heading text-2xl font-black">{recipe.Name}</p>
 			<p slot="Dauer" class="font-extrabold text-sm">{recipe.Dauer}</p>
 			<p slot="Schwierigkeit">{getStars(recipe.Schwierigkeit)}</p>
