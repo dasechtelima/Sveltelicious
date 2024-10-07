@@ -25,7 +25,7 @@
 		<p class="font-extrabold text-base mt-2 mb-1">Zutaten</p>
 		<ul class="font-semibold text-sm">
 			{#each singleRecipe.Zutaten as zutat}
-				{zutat[0]} {zutat[1]},&nbsp;
+				{zutat[0]} {zutat[1]} {zutat[2]},&nbsp;
 			{/each}
 		</ul>
 	</div>
