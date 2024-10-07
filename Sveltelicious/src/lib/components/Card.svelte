@@ -1,25 +1,32 @@
 <script>
-	export let imageSrc = "";
-	let imgSrc = "src/lib/data/img/" + imageSrc;
+	export let singleRecipe;
+
+	function getStars(difficulty) {
+		return '⭐'.repeat(difficulty);
+	}
 </script>
 
 <div class="flex flex-col bg-sv-beige/60 w-96 h-[450px] p-2 mx-4 rounded-xl">
 	<div class="mb-2 max-h-44 rounded-xl bg-slate-400 overflow-hidden">
-		<img class="object-cover h-full w-full" src={imgSrc} alt="This dish" />
+		<img class="object-cover h-full w-full" src="src/lib/data/img/{singleRecipe.Bild}" alt="This dish" />
 	</div>
 	<div class="mx-2 mb-6">
 		<div class="flex flex-row justify-between items-baseline">
-			<slot name="Name" />
+			<p class="font-heading text-2xl font-black">{singleRecipe.Name}</p>
 			<div class="flex flex-row">
-				<slot name="Dauer" />
+				<p class="font-extrabold text-sm">{singleRecipe.Dauer}</p>
 				,
-				<slot name="Schwierigkeit" />
+				<p>{getStars(singleRecipe.Schwierigkeit)}</p>
 			</div>
 		</div>
-		<slot name="Kategorie" />
+		<p class="font-extrabold text-sm">{singleRecipe.Kategorie}</p>
 		<p class="font-extrabold text-base mt-2 mb-1">Beschreibung</p>
-		<slot name="Beschreibung" />
+		<p class="font-semibold text-sm">{singleRecipe.Beschreibung}</p>
 		<p class="font-extrabold text-base mt-2 mb-1">Zutaten</p>
-		<slot name="Zutaten" />
+		<ul class="font-semibold text-sm">
+			{#each singleRecipe.Zutaten as zutat}
+				{zutat[0]} {zutat[1]} {zutat[2]},&nbsp;
+			{/each}
+		</ul>
 	</div>
 </div>
