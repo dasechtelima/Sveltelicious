@@ -81,7 +81,7 @@
 		</button>
 	</div>
 </div>
-<div class="flex flex-row place-content-center">
+<div class="flex flex-row overflow-x-scroll scroll-px-6">
 	{#each recipes as recipe}
 		<Card singleRecipe={recipe}></Card>
 	{/each}
