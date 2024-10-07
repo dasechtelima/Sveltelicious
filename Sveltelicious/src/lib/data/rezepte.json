@@ -4,12 +4,12 @@
   "Beschreibung": "ganz einfache Kürbiscremesuppe (ohne Orangen etc., nichts ausgefallenes)",
   "Zutaten": [
    ["1000", "g", "Kürbis"],
-   ["4", "Kartoffeln"],
-   ["2 Stangen", "Lauch"],
+   ["4", "", "Kartoffeln"],
+   ["2", "", "Stangen Lauch"],
    ["60", "g", "Butter"],
    ["2", "L", "Wasser"],
-   ["2", "Gemüsebrühwürfel"],
-   ["", "Salz & Pfeffer"]
+   ["2", "", "Gemüsebrühwürfel"],
+   ["", "", "Salz & Pfeffer"]
   ],
   "Zubereitung": "Das Kürbisfleisch würfeln, die Kartoffeln schälen und auch würfeln. Den Lauch waschen und in Streifen schneiden. Die Butter erhitzen und das  Gemüse darin anschwitzen. \u2028\u20282 Liter Wasser aufgießen mit dem Brühwürfel, Salz und Pfeffer würzen.  Bei mittlerer Hitze ca. 30 Minuten weich kochen. Nach Ende der Garzeit  alles pürieren. Mit Kräutern garnieren.",
   "Kategorie": "Mittag- & Abendessen",
@@ -24,11 +24,11 @@
    ["500", "g", "Weizenmehl"],
    ["5-6", "EL", "Zucker"],
    ["4", "TL", "Backpulver"],
-   ["2 Prisen", "Salz"],
-   ["4", "Eier"],
+   ["2", "Prisen", "Salz"],
+   ["4", "", "Eier"],
    ["400", "ml", "Milch"],
-   ["", "Ahornsirup"],
-   ["", "Beeren"]
+   ["", "", "Ahornsirup"],
+   ["", "", "Beeren"]
   ],
   "Zubereitung": "Mehl, Zucker, Backpulver und Salz in einer Schüssel vermischen. Eier und Milch hinzufügen und alles zu einem glatten Teig verrühren. Eine Pfanne erhitzen und etwas Butter darin schmelzen lassen. Den Teig portionsweise in die Pfanne geben und von beiden Seiten goldbraun backen. Mit Ahornsirup und Beeren servieren.",
   "Kategorie": "Frühstück",
@@ -41,11 +41,11 @@
   "Zutaten": [
    ["250", "g", "Spaghetti"],
    ["100", "g", "Pancetta"],
-   ["2", "Eier"],
+   ["2", "", "Eier"],
    ["40", "g", "Parmesan"],
    ["40", "g", "Pecorino Romano"],
-   ["", "Olivenöl"],
-   ["", "Salz & Pfeffer"]
+   ["", "", "Olivenöl"],
+   ["", "", "Salz & Pfeffer"]
   ],
   "Zubereitung": "Spaghetti in Salzwasser al dente kochen. Pancetta in einer Pfanne knusprig braten. Eier, Parmesan und Pecorino Romano in einer Schüssel verquirlen. Spaghetti abgießen und in die Pfanne geben. Eiermischung hinzufügen und alles gut vermengen. Mit Salz und Pfeffer abschmecken.",
   "Kategorie": "Mittag- & Abendessen",
