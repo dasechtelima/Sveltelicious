@@ -83,7 +83,7 @@
 </div>
 <div class="flex flex-row place-content-center">
 	{#each recipes as recipe}
-		<Card singleRecipe={recipe}></Card>
+		<Card singleRecipe={recipe} on:click={() => window.location.href = `/rezepte/${recipe.Name}`}></Card>
 	{/each}
 </div>
 
