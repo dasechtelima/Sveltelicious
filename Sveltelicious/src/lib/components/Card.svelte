@@ -30,8 +30,10 @@
 				</div>
 			</div>
 			<p class="font-extrabold text-sm">{singleRecipe.category}</p>
-			<p class="font-extrabold text-base mt-2 mb-1">Beschreibung</p>
-			<p class="font-semibold text-sm">{singleRecipe.description}</p>
+			{#if singleRecipe.description !== undefined}
+				<p class="font-extrabold text-base mt-2 mb-1">Beschreibung</p>
+				<p class="font-semibold text-sm">{singleRecipe.description}</p>
+			{/if}
 			<p class="font-extrabold text-base mt-2 mb-1">Zutaten</p>
 			<ul class="font-semibold text-sm">
 				{#each singleRecipe.ingredients as ingredient}

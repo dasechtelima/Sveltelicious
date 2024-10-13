@@ -64,7 +64,7 @@
 					 on:input={handle_search}>
 	</div>
 </div>
-<div class="flex place-items-center flex-col mb-8">
+<div class="flex place-items-center flex-col mb-14">
 	<p class="font-heading text-5xl m-2">What do you fancy today?</p>
 	<div class="flex flex-row place-content-center font-semibold mt-3">
 		<button on:click={() => filter_category('Frühstück')}
