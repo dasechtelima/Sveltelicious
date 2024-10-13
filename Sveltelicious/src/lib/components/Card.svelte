@@ -1,5 +1,6 @@
 <script>
 	export let singleRecipe;
+	import { getDurationFormatted } from '$lib';
 
 	function getStars(difficulty) {
 		return '⭐'.repeat(difficulty);
@@ -24,9 +25,9 @@
 			<div class="flex flex-row justify-between items-baseline">
 				<p class="font-heading text-2xl font-black">{singleRecipe.name}</p>
 				<div class="flex flex-row">
-					<p class="font-extrabold text-sm">{singleRecipe.duration}min</p>
-					,
-					<p>{getStars(singleRecipe.difficulty)}</p>
+					<p>
+					<span class="font-extrabold text-sm">{getDurationFormatted(singleRecipe.duration)}</span>,
+					{getStars(singleRecipe.difficulty)}</p>
 				</div>
 			</div>
 			<p class="font-extrabold text-sm">{singleRecipe.category}</p>
