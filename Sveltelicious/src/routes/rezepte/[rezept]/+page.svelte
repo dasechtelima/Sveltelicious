@@ -1,25 +1,12 @@
 <script>
+	// Die Daten, welche von +page.js übergeben werden
 	export let data;
-	import { error } from '@sveltejs/kit';
-	import { onMount } from 'svelte';
-	import { fetchRecipes } from '$lib';
 
-	let recipe = {};
-	let ingredients = [];
-	let preparationSteps = [];
+	import { getDurationFormatted } from '$lib';
+
+	let recipe = data.recipe;
 	let portionQuantity = 4;
-	let descriptionAvailable = true;
-
-	onMount(async () => {
-		recipe = (await fetchRecipes()).find((recipe) => recipe.name === data.name);
-		if (!recipe) {
-			error(404, {
-				message: 'Not found'
-			}); // TODO: 404 page routing
-		}
-		ingredients = recipe.ingredients;
-		preparationSteps = recipe.preparation;
-	});
+	let descriptionDisplay = true;
 </script>
 
 <div class="bg-sv-beige/50 flex flex-col min-h-screen pb-14">
@@ -34,7 +21,8 @@
 			<div class="flex flex-col align-middle">
 				<div class="flex justify-center">
 					<div class="mb-2 max-h-72 w-1/2 rounded-xl bg-slate-400 overflow-hidden">
-						{#if recipe.image != undefined}
+						<!-- Konditionales Rendering über {#if}, {:else if}, {:else} und {/if} -->
+						{#if recipe.image}
 							<img
 								class="object-cover h-full w-full"
 								src="/src/lib/data/img/{recipe.image}"
@@ -44,12 +32,10 @@
 					</div>
 				</div>
 				<div class="text-center font-semibold">
-					<h1 class="font-heading text-6xl">{data.name}</h1>
+					<h1 class="font-heading text-6xl">{recipe.name}</h1>
 					<h2>
-						{recipe.category}, ⏱️ {recipe.duration >= 60 ? Math.floor(recipe.duration / 60) + ' h ' : ''}
-						{recipe.duration % 60 ? (recipe.duration % 60) + ' min' : ''}, {'⭐'.repeat(
-							recipe.difficulty
-						)}
+						{recipe.category}, ⏱️ {getDurationFormatted(recipe.duration)},
+						{'⭐'.repeat(recipe.difficulty)}
 					</h2>
 				</div>
 			</div>
@@ -72,10 +58,12 @@
 					<div class="border rounded-3xl">
 						<table class="bg-sv-white rounded-3xl w-72 font-bold text-base">
 							<tbody>
-								{#each [...ingredients] as ingredient}
+								{#each [...recipe.ingredients] as ingredient}
 									<tr class="border">
 										<td class="text-right"
-											>{ingredient[0] != 0 ? ingredient[0] * portionQuantity + ingredient[1] : ''}</td
+											>{ingredient[0] != 0
+												? ingredient[0] * portionQuantity + ingredient[1]
+												: ''}</td
 										>
 										<td class="pl-6">{ingredient[2] ?? ''}</td>
 									</tr>
@@ -87,16 +75,25 @@
 				<div class="flex flex-col gap-4">
 					{#if recipe.description}
 						<div class="selection:bg-transparent">
-							<label for="desc" class="text-lg font-bold cursor-pointer selection:bg-transparent relative ml-[-1.3em]">{descriptionAvailable ? "▼" : "▶"}</label>
-							<input type="checkbox" id="desc" bind:checked={descriptionAvailable} class="hidden pointer "><label for="desc" class="text-xl font-bold  cursor-pointer">Beschreibung</label>
-							{#if descriptionAvailable}
+							<label
+								for="desc"
+								class="text-lg font-bold cursor-pointer selection:bg-transparent relative ml-[-1.3em]"
+								>{descriptionDisplay ? '▼' : '▶'}</label
+							>
+							<input
+								type="checkbox"
+								id="desc"
+								bind:checked={descriptionDisplay}
+								class="hidden pointer"
+							/><label for="desc" class="text-xl font-bold cursor-pointer">Beschreibung</label>
+							{#if descriptionDisplay}
 								<p class="mt-1">{recipe.description}</p>
 							{/if}
 						</div>
 					{/if}
 					<div>
 						<h2 class="font-bold text-2xl mb-1">Zubereitung</h2>
-						{#each [...preparationSteps] as preparationStep}
+						{#each [...recipe.preparation] as preparationStep}
 							<p class="mb-4">{preparationStep}</p>
 						{/each}
 					</div>
