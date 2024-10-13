@@ -24,7 +24,7 @@
 
 	function get_recipes() {
 		if (!search) {
-			reset();
+			resetFilter();
 			return;
 		}
 
@@ -33,7 +33,7 @@
 		console.log(recipes);
 	}
 
-	function reset() {
+	function resetFilter() {
 		recipes = allRecipes;
 		activeCategory = '';
 	}
@@ -42,7 +42,7 @@
 
 	function filter_category(category) {
 		if (activeCategory === category) {
-			reset();
+			resetFilter();
 			return;
 		}
 
@@ -67,15 +67,15 @@
 <div class="flex place-items-center flex-col mb-8">
 	<p class="font-heading text-5xl m-2">What do you fancy today?</p>
 	<div class="flex flex-row place-content-center font-semibold mt-3">
-		<button on:click={() => filter_category('Frühstück')} on:blur={reset}
+		<button on:click={() => filter_category('Frühstück')}
 						class={`bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Frühstück' ? 'bg-sv-green border-black' : ''}`}>
 			Frühstück
 		</button>
-		<button on:click={() => filter_category('Mittag')} on:blur={reset}
+		<button on:click={() => filter_category('Mittag')}
 						class={`mx-2 bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Mittag' ? 'bg-sv-green border-black' : ''}`}>
 			Mittag
 		</button>
-		<button on:click={() => filter_category('Abend')} on:blur={reset}
+		<button on:click={() => filter_category('Abend')}
 						class={`bg-[#EDEDED] border-solid border-2 rounded-xl border-[#D9D9D9] w-28 h-11 p-2 hover:bg-sv-green hover:border-black ${activeCategory === 'Abend' ? 'bg-sv-green border-black' : ''}`}>
 			Abend
 		</button>
