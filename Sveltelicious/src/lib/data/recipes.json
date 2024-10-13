@@ -1,0 +1,132 @@
+[
+	{
+		"name": "Kürbiscremesuppe",
+		"description": "ganz einfache Kürbiscremesuppe (ohne Orangen etc., nichts ausgefallenes)",
+		"ingredients": [
+			["1000", "g", "Kürbis"],
+			["4", "", "Kartoffeln"],
+			["2", "", "Stangen Lauch"],
+			["60", "g", "Butter"],
+			["2", "L", "Wasser"],
+			["2", "", "Gemüsebrühwürfel"],
+			["", "", "Salz & Pfeffer"]
+		],
+		"preparation": ["Das Kürbisfleisch würfeln, die Kartoffeln schälen und auch würfeln. Den Lauch waschen und in Streifen schneiden. Die Butter erhitzen und das  Gemüse darin anschwitzen.", "2 Liter Wasser aufgießen mit dem Brühwürfel, Salz und Pfeffer würzen.  Bei mittlerer Hitze ca. 30 Minuten weich kochen. Nach Ende der Garzeit  alles pürieren. Mit Kräutern garnieren."],
+		"category": "Mittag- & Abendessen",
+		"duration": "30",
+		"difficulty": "2",
+		"image": "kuerbiscremesuppe.jpg"
+	},
+	{
+		"name": "Pancakes",
+		"description": "Wir zeigen dir, wie du ganz einfach super fluffige American Pancakes zaubern kannst.",
+		"ingredients": [
+			["500", "g", "Weizenmehl"],
+			["5", "EL", "Zucker"],
+			["4", "TL", "Backpulver"],
+			["2", " Prisen", "Salz"],
+			["4", "", "Eier"],
+			["400", "ml", "Milch"],
+			["", "", "Ahornsirup"],
+			["", "", "Beeren"]
+		],
+		"preparation": ["Mehl, Zucker, Backpulver und Salz in einer Schüssel vermischen. Eier und Milch hinzufügen und alles zu einem glatten Teig verrühren. Eine Pfanne erhitzen und etwas Butter darin schmelzen lassen. Den Teig portionsweise in die Pfanne geben und von beiden Seiten goldbraun backen. Mit Ahornsirup und Beeren servieren."],
+		"category": "Frühstück",
+		"duration": "10",
+		"difficulty": "1",
+		"image": "pancakes.jpg"
+	},
+	{
+		"name": "Spaghetti Carbonara",
+		"ingredients": [
+			["250", "g", "Spaghetti"],
+			["100", "g", "Pancetta"],
+			["2", "", "Eier"],
+			["40", "g", "Parmesan"],
+			["40", "g", "Pecorino Romano"],
+			["", "", "Olivenöl"],
+			["", "", "Salz & Pfeffer"]
+		],
+		"preparation": ["Spaghetti in Salzwasser al dente kochen. Pancetta in einer Pfanne knusprig braten. Eier, Parmesan und Pecorino Romano in einer Schüssel verquirlen. Spaghetti abgießen und in die Pfanne geben. Eiermischung hinzufügen und alles gut vermengen. Mit Salz und Pfeffer abschmecken."],
+		"category": "Mittag- & Abendessen",
+		"duration": "20",
+		"difficulty": "2",
+		"image": "spaghetti.jpg"
+	},
+	{
+		"name": "Gemüselasagne",
+		"description": "Eine leckere und gesunde Gemüselasagne mit einer cremigen Béchamelsauce.",
+		"ingredients": [
+			["1", "Stück", "Zucchini"],
+			["1", "Stück", "Aubergine"],
+			["2", "Stück", "Karotten"],
+			["1", "Dose", "Tomaten"],
+			["200", "g", "Lasagneblätter"],
+			["500", "ml", "Milch"],
+			["50", "g", "Butter"],
+			["50", "g", "Mehl"],
+			["100", "g", "Mozzarella"],
+			["", "", "Salz & Pfeffer"]
+		],
+		"preparation": ["Das Gemüse waschen und in dünne Scheiben schneiden. Die Butter in einem Topf schmelzen, das Mehl hinzufügen und unter Rühren anschwitzen. Nach und nach die Milch hinzufügen und zu einer glatten Sauce verrühren. Mit Salz und Pfeffer abschmecken. Eine Auflaufform einfetten und abwechselnd Lasagneblätter, Gemüse und Béchamelsauce schichten. Mit Mozzarella bestreuen und im vorgeheizten Ofen bei 180°C ca. 40 Minuten backen."],
+		"category": "Mittag- & Abendessen",
+		"duration": "60",
+		"difficulty": "2",
+		"image": "gemueselasagne.jpg"
+	},
+	{
+		"name": "Ratatouille",
+		"description": "Ein klassisches französisches Gemüsegericht, das im Ofen gebacken wird.",
+		"ingredients": [
+			["1", "Stück", "Aubergine"],
+			["1", "Stück", "Zucchini"],
+			["1", "Stück", "Paprika"],
+			["2", "Stück", "Tomaten"],
+			["1", "Stück", "Zwiebel"],
+			["2", "Zehen", "Knoblauch"],
+			["2", "EL", "Olivenöl"],
+			["", "", "Salz & Pfeffer"],
+			["", "", "Frische Kräuter"]
+		],
+		"preparation": ["Das Gemüse waschen und in dünne Scheiben schneiden. Die Zwiebel und den Knoblauch fein hacken. Eine Auflaufform mit Olivenöl einfetten und das Gemüse abwechselnd schichten. Mit Salz, Pfeffer und frischen Kräutern würzen. Im vorgeheizten Ofen bei 180°C ca. 45 Minuten backen."],
+		"category": "Mittag- & Abendessen",
+		"duration": "60",
+		"difficulty": "2",
+		"image": "ratatouille.jpg"
+	},
+	{
+		"name": "Tomatensuppe",
+		"description": "Eine einfache und leckere Tomatensuppe, perfekt für kalte Tage.",
+		"ingredients": [
+			["1", "kg", "Tomaten"],
+			["1", "Stück", "Zwiebel"],
+			["2", "Zehen", "Knoblauch"],
+			["500", "ml", "Gemüsebrühe"],
+			["2", "EL", "Olivenöl"],
+			["", "", "Salz & Pfeffer"],
+			["", "", "Basilikum"]
+		],
+		"preparation": ["Die Tomaten waschen und grob würfeln. Zwiebel und Knoblauch fein hacken. Olivenöl in einem Topf erhitzen und die Zwiebel und den Knoblauch darin anschwitzen. Die Tomaten hinzufügen und kurz mitdünsten. Mit Gemüsebrühe aufgießen und ca. 20 Minuten köcheln lassen. Die Suppe pürieren und mit Salz, Pfeffer und Basilikum abschmecken."],
+		"category": "Mittag- & Abendessen",
+		"duration": "30",
+		"difficulty": "1",
+		"image": "tomatensuppe.jpg"
+	},
+	{
+		"name": "Avocado Toast",
+		"description": "Ein einfaches und gesundes Frühstück mit Avocado und Vollkornbrot.",
+		"ingredients": [
+			["1", "Stück", "Avocado"],
+			["2", "Scheiben", "Vollkornbrot"],
+			["1", "Stück", "Tomate"],
+			["", "", "Salz & Pfeffer"],
+			["", "", "Zitronensaft"],
+			["", "", "Olivenöl"]
+		],
+		"preparation": ["Die Avocado halbieren, den Kern entfernen und das Fruchtfleisch mit einer Gabel zerdrücken. Mit Salz, Pfeffer und Zitronensaft abschmecken. Die Tomate in Scheiben schneiden. Das Vollkornbrot toasten und mit der Avocadocreme bestreichen. Die Tomatenscheiben darauflegen und mit etwas Olivenöl beträufeln."],
+		"category": "Frühstück",
+		"duration": "10",
+		"difficulty": "1",
+		"image": "avocado-toast.jpg"
+	}
+]

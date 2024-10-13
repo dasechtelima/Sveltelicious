@@ -29,7 +29,7 @@
 		}
 
 		const searchTerm = search.toLowerCase();
-		recipes = allRecipes.filter(recipe => recipe.Name.toLowerCase().includes(searchTerm));
+		recipes = allRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm));
 		console.log(recipes);
 	}
 
@@ -48,7 +48,7 @@
 
 		activeCategory = category;
 		const searchTerm = category.toLowerCase();
-		recipes = allRecipes.filter(recipe => recipe.Kategorie.toLowerCase().includes(searchTerm));
+		recipes = allRecipes.filter(recipe => recipe.category.toLowerCase().includes(searchTerm));
 	}
 
 </script>
@@ -83,7 +83,7 @@
 </div>
 <div class="flex flex-row overflow-x-scroll scroll-px-6">
 	{#each recipes as recipe}
-		<Card singleRecipe={recipe} on:click={() => window.location.href = `/rezepte/${recipe.Name}`}></Card>
+		<Card singleRecipe={recipe} on:click={() => window.location.href = `/rezepte/${recipe.name}`}></Card>
 	{/each}
 </div>
 

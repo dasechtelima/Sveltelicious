@@ -5,20 +5,20 @@
 	import { fetchRecipes } from '$lib';
 
 	let recipe = {};
-	let zutaten = [];
-	let zubereitungsSchritte = [];
-	let portionen = 4;
-	let desc = true;
+	let ingredients = [];
+	let preparationSteps = [];
+	let portionQuantity = 4;
+	let descriptionAvailable = true;
 
 	onMount(async () => {
-		recipe = (await fetchRecipes()).find((recipe) => recipe.Name === data.name);
+		recipe = (await fetchRecipes()).find((recipe) => recipe.name === data.name);
 		if (!recipe) {
 			error(404, {
 				message: 'Not found'
 			}); // TODO: 404 page routing
 		}
-		zutaten = recipe.Zutaten;
-		zubereitungsSchritte = recipe.Zubereitung;
+		ingredients = recipe.ingredients;
+		preparationSteps = recipe.preparation;
 	});
 </script>
 
@@ -34,10 +34,10 @@
 			<div class="flex flex-col align-middle">
 				<div class="flex justify-center">
 					<div class="mb-2 max-h-72 w-1/2 rounded-xl bg-slate-400 overflow-hidden">
-						{#if recipe.Bild != undefined}
+						{#if recipe.image != undefined}
 							<img
 								class="object-cover h-full w-full"
-								src="/src/lib/data/img/{recipe.Bild}"
+								src="/src/lib/data/img/{recipe.image}"
 								alt="This dish"
 							/>
 						{/if}
@@ -46,9 +46,9 @@
 				<div class="text-center font-semibold">
 					<h1 class="font-heading text-6xl">{data.name}</h1>
 					<h2>
-						{recipe.Kategorie}, ⏱️ {recipe.Dauer >= 60 ? Math.floor(recipe.Dauer / 60) + ' h ' : ''}
-						{recipe.Dauer % 60 ? (recipe.Dauer % 60) + ' min' : ''}, {'⭐'.repeat(
-							recipe.Schwierigkeit
+						{recipe.category}, ⏱️ {recipe.duration >= 60 ? Math.floor(recipe.duration / 60) + ' h ' : ''}
+						{recipe.duration % 60 ? (recipe.duration % 60) + ' min' : ''}, {'⭐'.repeat(
+							recipe.difficulty
 						)}
 					</h2>
 				</div>
@@ -62,7 +62,7 @@
 							<input
 								type="number"
 								id="portions"
-								bind:value={portionen}
+								bind:value={portionQuantity}
 								min="1"
 								class="w-14 bg-gray-300 text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 py-1 pl-4 text-right"
 							/>
@@ -72,12 +72,12 @@
 					<div class="border rounded-3xl">
 						<table class="bg-sv-white rounded-3xl w-72 font-bold text-base">
 							<tbody>
-								{#each [...zutaten] as zutat}
+								{#each [...ingredients] as ingredient}
 									<tr class="border">
 										<td class="text-right"
-											>{zutat[0] != 0 ? zutat[0] * portionen + zutat[1] : ''}</td
+											>{ingredient[0] != 0 ? ingredient[0] * portionQuantity + ingredient[1] : ''}</td
 										>
-										<td class="pl-6">{zutat[2] ?? ''}</td>
+										<td class="pl-6">{ingredient[2] ?? ''}</td>
 									</tr>
 								{/each}
 							</tbody>
@@ -85,19 +85,19 @@
 					</div>
 				</div>
 				<div class="flex flex-col gap-4">
-					{#if recipe.Beschreibung}
+					{#if recipe.description}
 						<div class="selection:bg-transparent">
-							<label for="desc" class="text-lg font-bold cursor-pointer selection:bg-transparent relative ml-[-1.3em]">{desc ? "▼" : "▶"}</label>
-							<input type="checkbox" id="desc" bind:checked={desc} class="hidden pointer "><label for="desc" class="text-xl font-bold  cursor-pointer">Beschreibung</label>
-							{#if desc}
-								<p class="mt-1">{recipe.Beschreibung}</p>
+							<label for="desc" class="text-lg font-bold cursor-pointer selection:bg-transparent relative ml-[-1.3em]">{descriptionAvailable ? "▼" : "▶"}</label>
+							<input type="checkbox" id="desc" bind:checked={descriptionAvailable} class="hidden pointer "><label for="desc" class="text-xl font-bold  cursor-pointer">Beschreibung</label>
+							{#if descriptionAvailable}
+								<p class="mt-1">{recipe.description}</p>
 							{/if}
 						</div>
 					{/if}
 					<div>
 						<h2 class="font-bold text-2xl mb-1">Zubereitung</h2>
-						{#each [...zubereitungsSchritte] as zubereitungsSchritt}
-							<p class="mb-4">{zubereitungsSchritt}</p>
+						{#each [...preparationSteps] as preparationStep}
+							<p class="mb-4">{preparationStep}</p>
 						{/each}
 					</div>
 				</div>
