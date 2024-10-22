@@ -23,11 +23,7 @@
 					<div class="mb-2 max-h-72 w-1/2 rounded-xl bg-slate-400 overflow-hidden">
 						<!-- Konditionales Rendering über {#if}, {:else if}, {:else} und {/if} -->
 						{#if recipe.image}
-							<img
-								class="object-cover h-full w-full"
-								src="/src/lib/data/img/{recipe.image}"
-								alt="This dish"
-							/>
+							<img class="object-cover h-full w-full" src={`/img/${recipe.image}`} alt="This dish" />
 						{/if}
 					</div>
 				</div>

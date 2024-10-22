@@ -2,7 +2,7 @@
 
 // Lädt die Rezepte aus der JSON-Datei und gibt sie als Array zurück
 export async function fetchRecipes(fetch) {
-	const response = await fetch('/src/lib/data/recipes.json');
+	const response = await fetch('/data/recipes.json');
 	if (!response.ok) {
 		throw new Error('Failed to fetch recipes');
 	}
